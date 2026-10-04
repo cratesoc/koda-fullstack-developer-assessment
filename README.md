@@ -31,7 +31,9 @@ A simple task management application built with **Laravel**, **Vue 3**, **Tailwi
 
 ## Requirements
 
-This application is intended to run on **Linux**.
+**Target OS:** The application is built and intended to run natively on a **Linux** environment.
+* **Development Environment:** Development and initial testing were conducted using **WSL2 (Windows Subsystem for Linux) - Ubuntu 26.04.1 LTS**. 
+* **Pathing & Commands:** All file paths, shell scripts, and build commands assume a POSIX-compliant environment (Linux/macOS) and may require adjustment if executed natively on Windows (PowerShell/CMD).
 
 Install the following:
 
@@ -40,6 +42,21 @@ Install the following:
 * Composer 2
 * Node.js 22
 * npm 9
+
+The easiest way to install the required PHP development stack is using php.new:
+
+```bash
+/bin/bash -c "$(curl -fsSL https://php.new/install/linux/8.5)"
+```
+
+After the installation completes, restart your terminal or reload your shell configuration.
+
+Install Nodejs and NPM:
+
+```bash
+sudo apt update
+sudo apt install nodejs npm
+```
 
 Check the installed versions:
 
@@ -50,19 +67,6 @@ node -v
 npm -v
 ```
 
-Check that SQLite support is enabled:
-
-```bash
-php -m | grep -E 'pdo_sqlite|sqlite3'
-```
-
-You should see:
-
-```text
-pdo_sqlite
-sqlite3
-```
-
 ---
 
 ## Installation
@@ -70,8 +74,8 @@ sqlite3
 ### 1. Clone the repository
 
 ```bash
-git clone <repository-url>
-cd task-manager
+git clone https://github.com/cratesoc/koda-fullstack-developer-assessment.git
+cd koda-fullstack-developer-assessment
 ```
 
 ### 2. Install PHP dependencies
@@ -120,13 +124,13 @@ php artisan migrate
 
 ## Running the Application
 
-The application requires both the Laravel server and Vite development server.
-
-### Composer
+Run the application using:
 
 ```bash
 composer run dev
 ```
+
+On first run press y to install laravel/multiplex (this is a tabbed Terminal User Interface from Laravel)
 
 App will be available at:
 
